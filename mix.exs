@@ -11,7 +11,8 @@ defmodule BadSeed.Mixfile do
         licenses: ["MIT"],
         links: %{"GitHub" => "https://github.com/jeffkreeftmeijer/bad_seed"}
       ],
-      elixirc_paths: elixirc_paths(Mix.env)
+      elixirc_paths: elixirc_paths(Mix.env),
+      deps: [{:ex_doc, "~> 0.16", only: :dev, runtime: false}]
     ]
   end
 
