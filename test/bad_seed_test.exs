@@ -13,6 +13,11 @@ defmodule BadSeedTest do
       :ok = BadSeed.setup()
       assert seed == ExUnit.configuration()[:seed]
     end
+
+    test "BadSeed.write_or_delete_seed_file/1 removes .bad_seed when the test run passes" do
+      BadSeed.write_or_delete_seed_file(0)
+      assert {:error, :enoent} == FileMock.read(".bad_seed")
+    end
   end
 
   describe "when .bad_seed does not exist" do
