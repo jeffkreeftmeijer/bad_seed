@@ -5,9 +5,9 @@ Stores and reuses ExUnit seeds from failing test runs.
 ## How it works
 
 Whenever a test run finishes unsuccesfully, BadSeed will store the used seed in
-a file in the project's directory named `.bad_seed`. When the suite is run
+a file in the project's directory named `test/.bad_seed`. When the suite is run
 again, it'll automatically reuse that seed. If a test run passes with that seed,
-`.bad_seed` is removed to allow ExUnit to generate random seeds again.
+`test/.bad_seed` is removed to allow ExUnit to generate random seeds again.
 
 ## Installation
 

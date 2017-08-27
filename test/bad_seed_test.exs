@@ -16,7 +16,7 @@ defmodule BadSeedTest do
 
     test "BadSeed.write_or_delete_seed_file/1 removes .bad_seed when the test run passes" do
       BadSeed.write_or_delete_seed_file(0)
-      assert {:error, :enoent} == FileMock.read(".bad_seed")
+      assert {:error, :enoent} == FileMock.read("test/.bad_seed")
     end
   end
 
@@ -35,7 +35,7 @@ defmodule BadSeedTest do
 
     test "BadSeed.write_or_delete_seed_file/1 creates .bad_seed when the test run fails", %{seed: seed} do
       BadSeed.write_or_delete_seed_file(1)
-      assert {:ok, seed |> to_string} == FileMock.read(".bad_seed")
+      assert {:ok, seed |> to_string} == FileMock.read("test/.bad_seed")
     end
   end
 end
