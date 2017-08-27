@@ -27,5 +27,10 @@ defmodule BadSeedTest do
       :ok = BadSeed.setup()
       assert seed == ExUnit.configuration()[:seed]
     end
+
+    test "BadSeed.write_or_delete_seed_file/1 creates .bad_seed when the test run fails", %{seed: seed} do
+      BadSeed.write_or_delete_seed_file(1)
+      assert {:ok, seed |> to_string} == FileMock.read(".bad_seed")
+    end
   end
 end

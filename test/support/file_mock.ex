@@ -9,4 +9,8 @@ defmodule FileMock do
       seed -> {:ok, seed}
     end
   end
+
+  def write(".bad_seed", contents) do
+    Agent.update(__MODULE__, fn(_) -> contents end)
+  end
 end
