@@ -16,7 +16,7 @@ again, it'll automatically reuse that seed. If a test run passes with that seed,
   ```elixir
   def deps do
     [
-      {:bad_seed, "~> 0.1.0"}
+      {:bad_seed, "~> 0.1.0", only: :test}
     ]
   end
   ```
