@@ -10,6 +10,11 @@ defmodule FileMock do
     end
   end
 
+  def rm(".bad_seed") do
+    Agent.update(__MODULE__, fn(_) -> nil end)
+    :ok
+  end
+
   def write(".bad_seed", contents) do
     Agent.update(__MODULE__, fn(_) -> contents end)
   end
