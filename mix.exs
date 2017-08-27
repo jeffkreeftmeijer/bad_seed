@@ -4,7 +4,7 @@ defmodule BadSeed.Mixfile do
   def project do
     [
       app: :bad_seed,
-      version: "0.1.0",
+      version: "0.1.1",
       description: "Stores and reuses ExUnit seeds from failing test runs.",
       package: [
         maintainers: ["Jeff Kreeftmeijer"],
